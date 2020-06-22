@@ -1,4 +1,4 @@
-#!/home/damicode/Projects/FullStack/django-react/venv/bin/python3
+#!/home/damicode/Projects/FullStack/django-react/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
