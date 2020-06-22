@@ -14,7 +14,12 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT  =   os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -25,7 +30,7 @@ SECRET_KEY = 'pw21mf5cqli3!w$bbmbya5joy5c&b#05!ruq1n#p*mu49iafti'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.60.139', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['192.168.60.139', 'localhost', '127.0.0.1', 'https://contactlist-server.herokuapp.com']
 
 # Application definition
 
@@ -52,6 +57,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
